@@ -56,20 +56,6 @@ data class OverlayAddonData(var url: String,
     }
 }
 
-data class WebAddonData(var url: String,
-                        var x_dimension: Double,
-                        var y_dimension: Double,
-                        var width: Double,
-                        var height: Double,
-                        var name: String)
-{
-    fun convert(): OverlayAddonData
-    {
-        EditorController.increment()
-        return OverlayAddonData(url, EditorController._x, EditorController._y, width, height, name, "", "", "")
-    }
-}
-
 class EditorController : Initializable
 {
     companion object
